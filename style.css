@@ -1,0 +1,106 @@
+/* Rediseño básico y paleta de colores del mockup */
+:root {
+    --bg-color: #ede6e9;       /* Gris claro de fondo */
+    --btn-dark: #5e263f;       /* Negro/Gris muy oscuro */
+    --btn-gray: #b9a5b1;       /* Gris medio para el botón Donar */
+    --text-color: #ede6e9;     /* Gris del texto del botón oscuro */
+    --text-light: #5e263f;     /* Texto oscuro para el botón gris */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal centrado */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    gap: 60px; /* Espacio entre el logo y los botones */
+}
+
+/* Control del Logo */
+.logo-container {
+    width: 100%;
+    max-width: 280px; /* Tamaño máximo en desktop */
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
+/* Contenedor de botones (Por defecto en Desktop: en paralelo) */
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px; /* Espacio entre botones en desktop */
+    width: 100%;
+    justify-content: center;
+}
+
+/* Estilo base de los botones (enlaces que parecen recuadros) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 180px;
+    height: 55px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* Variantes de color de los botones */
+.btn-dark {
+    background-color: var(--btn-dark);
+    color: var(--text-color);
+}
+
+.btn-gray {
+    background-color: var(--btn-gray);
+    color: var(--text-light);
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 600px) {
+    .container {
+        gap: 45px; /* Reducimos un poco el espacio general */
+    }
+
+    .logo-container {
+        max-width: 220px; /* El logo se hace un poco más pequeño en móvil */
+    }
+
+    .buttons-container {
+        flex-direction: column; /* Los botones se apilan verticalmente */
+        align-items: center;
+        gap: 20px; /* Espacio entre los botones apilados */
+    }
+
+    .btn {
+        width: 200px; /* Pueden ser un pelín más anchos en móvil si buscas ese look */
+    }
+}
